@@ -1,0 +1,123 @@
+---
+title: "scDC: single cell differential composition analysis"
+author: "Yingxin Lin"
+date: "`r Sys.Date()`"
+output: 
+  rmarkdown::html_vignette:
+    number_sections: yes
+    toc: yes
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Package
+
+```{r}
+library(scDC)
+```
+
+
+# Data
+```{r}
+data("sim")
+exprsMat <- sim$sim_exprsMat
+subject <- sim$sim_subject
+cellTypes <- sim$sim_cellTypes
+cond <- sim$sim_cond
+
+dim(exprsMat)
+table(subject, cellTypes)
+table(cond, cellTypes)
+```
+
+
+
+
+
+# scDC (without clustering)
+
+Set `nboot = 50` for illustration.
+
+```{r}
+res_scDC_noClust <- scDC_noClustering(cellTypes, subject, calCI = TRUE, 
+                                     calCI_method = c("percentile", "BCa", "multinom"),
+                                     nboot = 50)
+```
+
+
+## Visualisation
+
+```{r fig.width = 8, fig.height=4}
+barplotCI(res_scDC_noClust, c("cond1","cond1","cond2","cond2"))
+```
+
+```{r fig.width = 8, fig.height=4}
+densityCI(res_scDC_noClust, c("cond1","cond1","cond2","cond2"))
+```
+
+## Fitting GLM
+
+```{r}
+res_GLM <- fitGLM(res_scDC_noClust, c("cond1","cond1","cond2","cond2"), pairwise = FALSE)
+```
+
+### Summary GLM results
+
+#### Fixed effect
+```{r}
+summary(res_GLM$pool_res_fixed)
+```
+
+#### Random effect
+```{r}
+summary(res_GLM$pool_res_random)
+```
+
+
+
+# scDC (with clustering) (Not Run)
+
+```{r eval = FALSE}
+res_scDC_clust = scDC_noClustering(cellTypes, 
+                                   subject, calCI = TRUE, 
+                                   calCI_method = c("percentile", "BCa", "multinom"))
+```
+
+
+## Visualisation
+
+```{r eval = FALSE}
+barplotCI(res_scDC_clust, c("cond1","cond1","cond2","cond2"))
+densityCI(res_scDC_clust, c("cond1","cond1","cond2","cond2"))
+```
+
+
+## Fitting GLM
+
+```{r eval = FALSE}
+res_GLM <- fitGLM(res_scDC_noClust, c("cond1","cond1","cond2","cond2"), pairwise = FALSE)
+```
+
+### Summary GLM results
+
+#### Fixed effect
+```{r eval = FALSE}
+summary(res_GLM$pool_res_fixed)
+```
+
+#### Random effect
+```{r eval = FALSE}
+summary(res_GLM$pool_res_random)
+```
+
+
+
