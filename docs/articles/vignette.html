@@ -129,19 +129,35 @@ cond &lt;-<span class="st"> </span>sim<span class="op">$</span>sim_cond
 <div id="visualisation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#visualisation" class="anchor"></a>Visualisation</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/barplotCI.html">barplotCI</a></span>(res_scDC_noClust, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"cond1"</span>,<span class="st">"cond1"</span>,<span class="st">"cond2"</span>,<span class="st">"cond2"</span>))</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/barplotCI.html">barplotCI</a></span>(res_scDC_noClust, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"cond1"</span>,<span class="st">"cond1"</span>,<span class="st">"cond1"</span>,<span class="st">"cond1"</span>,
+                              <span class="st">"cond2"</span>,<span class="st">"cond2"</span>,<span class="st">"cond2"</span>,<span class="st">"cond2"</span>))</code></pre></div>
 <p><img src="vignette_files/figure-html/unnamed-chunk-4-1.png" width="768"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/densityCI.html">densityCI</a></span>(res_scDC_noClust, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"cond1"</span>,<span class="st">"cond1"</span>,<span class="st">"cond2"</span>,<span class="st">"cond2"</span>))
-<span class="co">#&gt; Picking joint bandwidth of 0.0266</span>
-<span class="co">#&gt; Picking joint bandwidth of 0.0266</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/densityCI.html">densityCI</a></span>(res_scDC_noClust, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"cond1"</span>,<span class="st">"cond1"</span>,<span class="st">"cond1"</span>,<span class="st">"cond1"</span>,
+                              <span class="st">"cond2"</span>,<span class="st">"cond2"</span>,<span class="st">"cond2"</span>,<span class="st">"cond2"</span>))
+<span class="co">#&gt; Picking joint bandwidth of 0.0252</span>
+<span class="co">#&gt; Picking joint bandwidth of 0.0252</span></code></pre></div>
 <p><img src="vignette_files/figure-html/unnamed-chunk-5-1.png" width="768"></p>
 </div>
 <div id="fitting-glm" class="section level2">
 <h2 class="hasAnchor">
 <a href="#fitting-glm" class="anchor"></a>Fitting GLM</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">res_GLM &lt;-<span class="st"> </span><span class="kw"><a href="../reference/fitGLM.html">fitGLM</a></span>(res_scDC_noClust, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"cond1"</span>,<span class="st">"cond1"</span>,<span class="st">"cond2"</span>,<span class="st">"cond2"</span>), <span class="dt">pairwise =</span> <span class="ot">FALSE</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">res_GLM &lt;-<span class="st"> </span><span class="kw"><a href="../reference/fitGLM.html">fitGLM</a></span>(res_scDC_noClust, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"cond1"</span>,<span class="st">"cond1"</span>,<span class="st">"cond1"</span>,<span class="st">"cond1"</span>,
+                                      <span class="st">"cond2"</span>,<span class="st">"cond2"</span>,<span class="st">"cond2"</span>,<span class="st">"cond2"</span>), 
+                  <span class="dt">pairwise =</span> <span class="ot">FALSE</span>)
+<span class="co">#&gt; Warning in checkConv(attr(opt, "derivs"), opt$par, ctrl =</span>
+<span class="co">#&gt; control$checkConv, : Model failed to converge with max|grad| = 0.00110342</span>
+<span class="co">#&gt; (tol = 0.001, component 1)</span>
+<span class="co">#&gt; Warning in checkConv(attr(opt, "derivs"), opt$par, ctrl =</span>
+<span class="co">#&gt; control$checkConv, : Model failed to converge with max|grad| = 0.0153461</span>
+<span class="co">#&gt; (tol = 0.001, component 1)</span>
+<span class="co">#&gt; Warning in checkConv(attr(opt, "derivs"), opt$par, ctrl =</span>
+<span class="co">#&gt; control$checkConv, : Model failed to converge with max|grad| = 0.00144895</span>
+<span class="co">#&gt; (tol = 0.001, component 1)</span>
 <span class="co">#&gt; [1] "fitting GLM... 10"</span>
 <span class="co">#&gt; [1] "fitting GLM... 20"</span>
+<span class="co">#&gt; Warning in checkConv(attr(opt, "derivs"), opt$par, ctrl =</span>
+<span class="co">#&gt; control$checkConv, : Model failed to converge with max|grad| = 0.00354625</span>
+<span class="co">#&gt; (tol = 0.001, component 1)</span>
 <span class="co">#&gt; [1] "fitting GLM... 30"</span>
 <span class="co">#&gt; [1] "fitting GLM... 40"</span>
 <span class="co">#&gt; [1] "fitting GLM... 50"</span></code></pre></div>
@@ -152,35 +168,30 @@ cond &lt;-<span class="st"> </span>sim<span class="op">$</span>sim_cond
 <h4 class="hasAnchor">
 <a href="#fixed-effect" class="anchor"></a>Fixed effect</h4>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/summary">summary</a></span>(res_GLM<span class="op">$</span>pool_res_fixed)
-<span class="co">#&gt;                            estimate std.error  statistic        df</span>
-<span class="co">#&gt; (Intercept)              3.41321489 0.1752847 19.4724021 1.0254099</span>
-<span class="co">#&gt; cellTypesn4             -0.74361062 0.2866279 -2.5943411 0.5622490</span>
-<span class="co">#&gt; condcond2                0.63407961 0.2211081  2.8677356 1.0192486</span>
-<span class="co">#&gt; subjectCond1_replicate2 -0.37578934 0.1720231 -2.1845283 1.1998800</span>
-<span class="co">#&gt; subjectCond2_replicate1  0.51082562 0.1885616  2.7090654 1.1998800</span>
-<span class="co">#&gt; cellTypesn4:condcond2   -0.06577109 0.3799817 -0.1730902 0.6001514</span>
+<span class="co">#&gt;                           estimate std.error  statistic        df</span>
+<span class="co">#&gt; (Intercept)              3.1791270 0.2065310 15.3929758 0.8677741</span>
+<span class="co">#&gt; cellTypesn4             -0.1492135 0.3035738 -0.4915229 0.5182430</span>
+<span class="co">#&gt; condcond2                0.9932637 0.2381592  4.1705876 0.9451340</span>
+<span class="co">#&gt; subjectCond1_replicate2  0.2363888 0.1994143  1.1854153 1.1998800</span>
+<span class="co">#&gt; subjectCond2_replicate1 -0.1013525 0.1593158 -0.6361736 1.1998800</span>
+<span class="co">#&gt; cellTypesn4:condcond2   -1.1408530 0.3916524 -2.9129220 0.6070586</span>
 <span class="co">#&gt;                            p.value</span>
-<span class="co">#&gt; (Intercept)             0.01898634</span>
-<span class="co">#&gt; cellTypesn4             0.19938790</span>
-<span class="co">#&gt; condcond2               0.17888310</span>
-<span class="co">#&gt; subjectCond1_replicate2 0.23891968</span>
-<span class="co">#&gt; subjectCond2_replicate1 0.19030662</span>
-<span class="co">#&gt; cellTypesn4:condcond2   0.88712779</span></code></pre></div>
+<span class="co">#&gt; (Intercept)             0.02515396</span>
+<span class="co">#&gt; cellTypesn4             0.69779917</span>
+<span class="co">#&gt; condcond2               0.11748888</span>
+<span class="co">#&gt; subjectCond1_replicate2 0.41965887</span>
+<span class="co">#&gt; subjectCond2_replicate1 0.62431043</span>
+<span class="co">#&gt; cellTypesn4:condcond2   0.17584791</span></code></pre></div>
 </div>
 <div id="random-effect" class="section level4">
 <h4 class="hasAnchor">
 <a href="#random-effect" class="anchor"></a>Random effect</h4>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/summary">summary</a></span>(res_GLM<span class="op">$</span>pool_res_random)
-<span class="co">#&gt;                          estimate std.error  statistic        df</span>
-<span class="co">#&gt; (Intercept)            3.68128753 0.1840117 20.0057270 1.7355755</span>
-<span class="co">#&gt; cellTypesn4           -0.74361048 0.2866281 -2.5943388 0.9350745</span>
-<span class="co">#&gt; condcond2              0.18213004 0.2525884  0.7210548 1.7689177</span>
-<span class="co">#&gt; cellTypesn4:condcond2 -0.06576997 0.3799827 -0.1730868 0.9982272</span>
-<span class="co">#&gt;                           p.value</span>
-<span class="co">#&gt; (Intercept)           0.004319686</span>
-<span class="co">#&gt; cellTypesn4           0.137847019</span>
-<span class="co">#&gt; condcond2             0.554117608</span>
-<span class="co">#&gt; cellTypesn4:condcond2 0.880327192</span></code></pre></div>
+<span class="co">#&gt;                         estimate std.error  statistic        df    p.value</span>
+<span class="co">#&gt; (Intercept)            3.3042846 0.1738867 19.0025098 1.2170531 0.01247092</span>
+<span class="co">#&gt; cellTypesn4           -0.1492039 0.3035720 -0.4914944 0.8617986 0.69006751</span>
+<span class="co">#&gt; condcond2              0.8187111 0.1964235  4.1680913 1.3738168 0.09678896</span>
+<span class="co">#&gt; cellTypesn4:condcond2 -1.1408365 0.3916512 -2.9128890 1.0097390 0.15271880</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -194,13 +205,17 @@ cond &lt;-<span class="st"> </span>sim<span class="op">$</span>sim_cond
 <div id="visualisation-1" class="section level2">
 <h2 class="hasAnchor">
 <a href="#visualisation-1" class="anchor"></a>Visualisation</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/barplotCI.html">barplotCI</a></span>(res_scDC_clust, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"cond1"</span>,<span class="st">"cond1"</span>,<span class="st">"cond2"</span>,<span class="st">"cond2"</span>))
-<span class="kw"><a href="../reference/densityCI.html">densityCI</a></span>(res_scDC_clust, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"cond1"</span>,<span class="st">"cond1"</span>,<span class="st">"cond2"</span>,<span class="st">"cond2"</span>))</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/barplotCI.html">barplotCI</a></span>(res_scDC_clust, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"cond1"</span>,<span class="st">"cond1"</span>,<span class="st">"cond1"</span>,<span class="st">"cond1"</span>,
+                            <span class="st">"cond2"</span>,<span class="st">"cond2"</span>,<span class="st">"cond2"</span>,<span class="st">"cond2"</span>))<span class="er">)</span>
+<span class="kw"><a href="../reference/densityCI.html">densityCI</a></span>(res_scDC_clust, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"cond1"</span>,<span class="st">"cond1"</span>,<span class="st">"cond1"</span>,<span class="st">"cond1"</span>,
+                            <span class="st">"cond2"</span>,<span class="st">"cond2"</span>,<span class="st">"cond2"</span>,<span class="st">"cond2"</span>))<span class="er">)</span></code></pre></div>
 </div>
 <div id="fitting-glm-1" class="section level2">
 <h2 class="hasAnchor">
 <a href="#fitting-glm-1" class="anchor"></a>Fitting GLM</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">res_GLM &lt;-<span class="st"> </span><span class="kw"><a href="../reference/fitGLM.html">fitGLM</a></span>(res_scDC_noClust, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"cond1"</span>,<span class="st">"cond1"</span>,<span class="st">"cond2"</span>,<span class="st">"cond2"</span>), <span class="dt">pairwise =</span> <span class="ot">FALSE</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">res_GLM &lt;-<span class="st"> </span><span class="kw"><a href="../reference/fitGLM.html">fitGLM</a></span>(res_scDC_noClust,
+                  <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"cond1"</span>,<span class="st">"cond1"</span>,<span class="st">"cond1"</span>,<span class="st">"cond1"</span>,
+                    <span class="st">"cond2"</span>,<span class="st">"cond2"</span>,<span class="st">"cond2"</span>,<span class="st">"cond2"</span>), <span class="dt">pairwise =</span> <span class="ot">FALSE</span>)</code></pre></div>
 <div id="summary-glm-results-1" class="section level3">
 <h3 class="hasAnchor">
 <a href="#summary-glm-results-1" class="anchor"></a>Summary GLM results</h3>
