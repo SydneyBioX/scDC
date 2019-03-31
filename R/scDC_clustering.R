@@ -16,7 +16,7 @@
 #' @import parallel
 #' @import reshape2
 #' @import DescTools
-#' @import scNet
+#' @import scClust
 #' @import stats
 #' @export
 #' @examples

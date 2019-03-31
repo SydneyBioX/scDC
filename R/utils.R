@@ -52,7 +52,7 @@
   while (is.null(label) | length(unique(label)) != length(unique(cellTypes))){
     label = NULL
 
-    kmeans.result <- scNet::scClust(t(pca), num_G, similarity = "pearson", method = "kmeans", seed = 1, nstart = 100, iter.max = 1000)
+    kmeans.result <- scClust::scClust(t(pca), num_G, similarity = "pearson", method = "kmeans", seed = 1, nstart = 100, iter.max = 1000)
 
 
     confusion <- table(cellTypes[x], kmeans.result$cluster)
