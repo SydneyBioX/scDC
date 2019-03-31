@@ -22,3 +22,12 @@ devtools::install_github("SydneyBioX/scDC")
 ```
 
 
+## Vignette
+
+You can find the vignette at our website: https://sydneybiox.github.io/scDC/index.html.
+
+
+## Authors
+
+Yingxin Lin
+Yue Cao
