@@ -16,11 +16,13 @@
 #' @examples
 #' ## Loading example data
 #'
+
+#' \dontrun{
+#' library(scDC)
 #' data("sim")
 #'
 #' cellTypes = sim$sim_cellTypes
 #' subject = sim$sim_subject
-#' \dontrun{
 #' res_scDC = scDC_noClustering(cellTypes, subject,
 #' calCI = TRUE, calCI_method = c("BCa", "percentile"))
 #' barplotCI(res_scDC, c("cond1","cond1","cond2","cond2"))

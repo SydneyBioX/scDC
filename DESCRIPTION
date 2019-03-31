@@ -2,17 +2,17 @@ Package: scDC
 Type: Package
 Title: Single cell differential composition analysis
 Version: 0.1.0
-Author: c(
+Authors@R: c(
     person("Yue", "Cao", email = "yue.cao@sydney.edu.au", role = c("aut", "cre")
     ),
     person("Yingxin", "Lin", email = "yingxin.lin@sydney.edu.au", role = c("aut")
-    )
+    ))
 Maintainer: Yue Cao <yue.cao@sydney.edu.au>
 Description: This is a package to perform single cell differential composition analysis.
 License: FALSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1
 Imports:
   parallel,
   scClust,

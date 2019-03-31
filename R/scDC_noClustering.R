@@ -19,7 +19,7 @@
 #' @export
 #' @examples
 #' ## Loading example data
-#'
+#' library(scDC)
 #' data("sim")
 #'
 #' cellTypes = sim$sim_cellTypes

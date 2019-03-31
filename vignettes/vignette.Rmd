@@ -57,17 +57,21 @@ res_scDC_noClust <- scDC_noClustering(cellTypes, subject, calCI = TRUE,
 ## Visualisation
 
 ```{r fig.width = 8, fig.height=4}
-barplotCI(res_scDC_noClust, c("cond1","cond1","cond2","cond2"))
+barplotCI(res_scDC_noClust, c("cond1","cond1","cond1","cond1",
+                              "cond2","cond2","cond2","cond2"))
 ```
 
 ```{r fig.width = 8, fig.height=4}
-densityCI(res_scDC_noClust, c("cond1","cond1","cond2","cond2"))
+densityCI(res_scDC_noClust, c("cond1","cond1","cond1","cond1",
+                              "cond2","cond2","cond2","cond2"))
 ```
 
 ## Fitting GLM
 
 ```{r}
-res_GLM <- fitGLM(res_scDC_noClust, c("cond1","cond1","cond2","cond2"), pairwise = FALSE)
+res_GLM <- fitGLM(res_scDC_noClust, c("cond1","cond1","cond1","cond1",
+                                      "cond2","cond2","cond2","cond2"), 
+                  pairwise = FALSE)
 ```
 
 ### Summary GLM results
@@ -96,15 +100,19 @@ res_scDC_clust = scDC_noClustering(cellTypes,
 ## Visualisation
 
 ```{r eval = FALSE}
-barplotCI(res_scDC_clust, c("cond1","cond1","cond2","cond2"))
-densityCI(res_scDC_clust, c("cond1","cond1","cond2","cond2"))
+barplotCI(res_scDC_clust, c("cond1","cond1","cond1","cond1",
+                            "cond2","cond2","cond2","cond2")))
+densityCI(res_scDC_clust, c("cond1","cond1","cond1","cond1",
+                            "cond2","cond2","cond2","cond2")))
 ```
 
 
 ## Fitting GLM
 
 ```{r eval = FALSE}
-res_GLM <- fitGLM(res_scDC_noClust, c("cond1","cond1","cond2","cond2"), pairwise = FALSE)
+res_GLM <- fitGLM(res_scDC_noClust,
+                  c("cond1","cond1","cond1","cond1",
+                    "cond2","cond2","cond2","cond2"), pairwise = FALSE)
 ```
 
 ### Summary GLM results

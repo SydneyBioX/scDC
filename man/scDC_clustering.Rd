@@ -35,7 +35,7 @@ Single-cell Differential Composition Analysis with performing clustering
 }
 \examples{
 ## Loading example data
-
+library(scDC)
 data("sim")
 
 cellTypes = sim$sim_cellTypes

@@ -6,10 +6,13 @@
 \title{simulated expression matrix of single cell RNA-seq data, with cell type, subject, and condition info}
 \format{A `list` object}
 \usage{
-sim
+data(sim)
 }
 \description{
 A dataset simulated from PowsimR
 sim
+}
+\author{
+Yingxin Lin
 }
 \keyword{datasets}
