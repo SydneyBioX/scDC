@@ -37,7 +37,8 @@ densityCI <- function(res, condition){
 
   conf_line$method <- factor(conf_line$method, levels = c("BCa", "percentile", "multinom"))
   n_method <- length(unique(conf_line$method))
-
+  n_celltype = length(unique(df_toPlot$cellTypes))
+  
   g_density <- ggplot2::ggplot(df_toPlot, aes(x = value, y = subject, fill= cond)) +
     ggridges::stat_density_ridges(alpha = 0.5) +
     ggplot2::geom_segment(data = conf_line, aes(x = conf_low, xend = conf_low, y = as.numeric(subject),
@@ -49,11 +50,11 @@ densityCI <- function(res, condition){
                                        color = method, linetype = method),
                  lwd = 1, alpha = 0.8) +
     ggplot2::theme_bw() +
-    ggplot2::theme(text = element_text(size = 12)) +
+    ggplot2::theme(axis.text.x = element_text(angle = 90), text = element_text(size = 12)) +
     ggplot2::scale_color_manual(values = .CIbarColor(n_method)) +
     ggplot2::scale_fill_brewer(palette = "Set2") +
     ggplot2::xlab("Proportion") +
-    ggplot2::facet_wrap(~cellTypes, ncol = 4, scales = "free_x")
+    ggplot2::facet_wrap(~cellTypes, ncol = n_celltype , scales = "free_x")
 
   g_density
   return(g_density)
