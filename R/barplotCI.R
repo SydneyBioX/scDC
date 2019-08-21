@@ -30,7 +30,9 @@ barplotCI <- function(res, condition){
   df_toPlot$cond <- condition
   df_toPlot$method <- factor(df_toPlot$method, levels = c("BCa", "percentile", "multinom"))
   n_method <- length(unique(df_toPlot$method))
-
+  
+  n_celltype = length(unique(df_toPlot$cellTypes))
+  
   g_bar <- ggplot2::ggplot(df_toPlot, aes(x = subject, y = median, fill = cond)) +
     ggplot2::geom_bar(stat="identity", position = "dodge", alpha = 0.8) +
     ggplot2::theme_bw() +
@@ -40,7 +42,7 @@ barplotCI <- function(res, condition){
                   position=position_dodge(width = 0.5)) +
     ggplot2::theme(axis.text.x = element_text(angle = 90), text = element_text(size = 12)) +
     ggplot2::scale_color_manual(values = .CIbarColor(n_method)) +
-    ggplot2::facet_wrap(~cellTypes, ncol = 4) +
+    ggplot2::facet_wrap(~cellTypes, ncol = n_celltype) +
     ggplot2::coord_flip()+
     ggplot2::ylim(c(0,1))+
     NULL
