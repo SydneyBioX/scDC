@@ -53,7 +53,8 @@ densityCI <- function(res, condition){
       ggplot2::scale_color_manual(values = .CIbarColor(n_method)) +
       ggplot2::scale_fill_brewer(palette = "Set2") +
       ggplot2::xlab("Proportion") +
-      ggplot2::facet_wrap(~cellTypes, ncol = n_celltype , scales = "free_x")
+      ggplot2::facet_wrap(~cellTypes, ncol = n_celltype , scales = "free_x" ,
+                          labeller = labeller(cellTypes  = label_wrap_gen(width = 10,  multi_line = TRUE)))
     
   } else {
     
@@ -72,7 +73,8 @@ densityCI <- function(res, condition){
       ggplot2::scale_color_manual(values = .CIbarColor(n_method)) +
       ggplot2::scale_fill_brewer(palette = "Set2") +
       ggplot2::xlab("Proportion") +
-      ggplot2::facet_wrap(~cellTypes, ncol = n_celltype , scales = "free_x")
+      ggplot2::facet_wrap(~cellTypes, ncol = n_celltype , scales = "free_x" ,
+                          labeller = labeller(cellTypes  = label_wrap_gen(width = 10,  multi_line = TRUE)) )
     
   }
   g_density
