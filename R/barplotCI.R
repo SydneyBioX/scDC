@@ -42,7 +42,8 @@ barplotCI <- function(res, condition){
                   position=position_dodge(width = 0.5)) +
     ggplot2::theme(axis.text.x = element_text(angle = 90), text = element_text(size = 12)) +
     ggplot2::scale_color_manual(values = .CIbarColor(n_method)) +
-    ggplot2::facet_wrap(~cellTypes, ncol = n_celltype) +
+    ggplot2::facet_wrap(~cellTypes, ncol = n_celltype，
+                        labeller = labeller(cellTypes  = label_wrap_gen(width = 10,  multi_line = TRUE))) +
     ggplot2::coord_flip()+
     ggplot2::ylim(c(0,1))+
     NULL
