@@ -39,7 +39,7 @@ densityCI <- function(res, condition){
   n_method <- length(unique(conf_line$method))
   n_celltype = length(unique(df_toPlot$cellTypes))
   
-  if (unique(df_toPlot$subject) == 1){
+  if (length(unique(df_toPlot$subject)) == 1){
     g_density <- ggplot2::ggplot(df_toPlot, aes(x = value, y = subject, fill= cond)) +
       ggridges::stat_density_ridges(alpha = 0.5) +
       ggplot2::geom_vline(data = conf_line, aes(xintercept = conf_low, 
