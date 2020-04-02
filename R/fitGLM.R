@@ -48,6 +48,13 @@ fitGLM <- function(res, condition, subject_effect = TRUE, pairwise = TRUE, fixed
     # glm_df <- melt(glm_df)
     colnames(glm_df) <- c("cellTypes", "subject", "cell_count")
     glm_df$cond <- condition
+ 
+    mod <- stats::glm(cell_count ~ cellTypes   + cond +  cellTypes:cond + subject,
+                      data = glm_df,
+                      family = poisson(link=log))
+
+
+    degree_freedom = mod$df.null
 
     if(subject_effect){
       if(pairwise){
@@ -83,14 +90,14 @@ fitGLM <- function(res, condition, subject_effect = TRUE, pairwise = TRUE, fixed
   }
 
   if(!fixed_only){
-    pool_res_random = mice::pool(fit_random)
-    pool_res_fixed = mice::pool(fit_fixed)
+    pool_res_random = mice::pool(fit_random,  dfcom = degree_freedom)
+    pool_res_fixed = mice::pool(fit_fixed ,  dfcom = degree_freedom)
     return(list(pool_res_random = pool_res_random,
                 pool_res_fixed = pool_res_fixed,
                 fit_random = fit_random,
                 fit_fixed = fit_fixed))
   }else{
-    pool_res_fixed = mice::pool(fit_fixed)
+    pool_res_fixed = mice::pool(fit_fixed,  dfcom = degree_freedom)
     return(list(pool_res_fixed = pool_res_fixed,
                 fit_fixed = fit_fixed))
   }
