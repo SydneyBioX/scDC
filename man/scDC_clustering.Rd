@@ -4,9 +4,17 @@
 \alias{scDC_clustering}
 \title{scDC_clustering}
 \usage{
-scDC_clustering(exprsMat = NULL, cellTypes = NULL, subject = NULL,
-  calCI = TRUE, calCI_method = c("BCa", "multinom", "percentile"),
-  nboot = NULL, conf_level = 0.95, ncores = 1, verbose = TRUE)
+scDC_clustering(
+  exprsMat = NULL,
+  cellTypes = NULL,
+  subject = NULL,
+  calCI = TRUE,
+  calCI_method = c("BCa", "multinom", "percentile"),
+  nboot = NULL,
+  conf_level = 0.95,
+  ncores = 1,
+  verbose = TRUE
+)
 }
 \arguments{
 \item{exprsMat}{logcounts expression matrix with each row represents gene, and each column represents cell}

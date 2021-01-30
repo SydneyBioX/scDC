@@ -4,9 +4,16 @@
 \alias{scDC_noClustering}
 \title{scDC_noClustering}
 \usage{
-scDC_noClustering(cellTypes = NULL, subject = NULL, calCI = TRUE,
-  calCI_method = c("BCa", "multinom", "percentile"), nboot = 10000,
-  conf_level = 0.95, ncores = 1, verbose = TRUE)
+scDC_noClustering(
+  cellTypes = NULL,
+  subject = NULL,
+  calCI = TRUE,
+  calCI_method = c("BCa", "multinom", "percentile"),
+  nboot = 10000,
+  conf_level = 0.95,
+  ncores = 1,
+  verbose = TRUE
+)
 }
 \arguments{
 \item{cellTypes}{A vector indicates the cell type info of the data}

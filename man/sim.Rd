@@ -4,7 +4,9 @@
 \name{sim}
 \alias{sim}
 \title{simulated expression matrix of single cell RNA-seq data, with cell type, subject, and condition info}
-\format{A `list` object}
+\format{
+A `list` object
+}
 \usage{
 data(sim)
 }

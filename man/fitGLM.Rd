@@ -4,8 +4,14 @@
 \alias{fitGLM}
 \title{fitGLM}
 \usage{
-fitGLM(res, condition, subject_effect = TRUE, pairwise = TRUE,
-  fixed_only = FALSE, verbose = TRUE)
+fitGLM(
+  res,
+  condition,
+  subject_effect = TRUE,
+  pairwise = TRUE,
+  fixed_only = FALSE,
+  verbose = TRUE
+)
 }
 \arguments{
 \item{res}{results from \code{scDC_noClustering}, \code{scDC_clustering} function}
