@@ -8,7 +8,7 @@
 ```
 ## Some CRAN packages required by scDC
 install.packages(c("parallel", "DescTools", "lme4", "reshape2", "ggridges", 
-"lme4", "mice"))
+"lme4", "mice", "broom.mixed"))
 
 ## Some BioConductor packages required by scDC
 BiocManager::install(c("scran"))
