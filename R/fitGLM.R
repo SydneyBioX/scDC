@@ -12,6 +12,7 @@
 #'
 #' @import mice
 #' @import lme4
+#' @import broom.mixed
 #' @export
 #' @examples
 #' ## Loading example data
