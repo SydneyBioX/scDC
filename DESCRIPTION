@@ -29,3 +29,4 @@ Suggests:
 Remotes:
     SydneyBioX/scClustBench
 VignetteBuilder: knitr
+biocViews: SingleCell
