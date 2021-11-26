@@ -27,5 +27,5 @@ Suggests:
     knitr,
     rmarkdown
 Remotes:
-    taiyunkim/scClustBench
+    SydneyBioX/scClustBench
 VignetteBuilder: knitr
