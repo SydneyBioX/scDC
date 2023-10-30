@@ -14,7 +14,7 @@ install.packages(c("parallel", "DescTools", "lme4", "reshape2", "ggridges",
 BiocManager::install(c("scran"))
 
 ## Some Github packages required by scDC
-devtools::install_github("taiyunkim/scClustBench")
+devtools::install_github("SydneyBioX/scClustBench")
 
 
 ## Installing scDC 
